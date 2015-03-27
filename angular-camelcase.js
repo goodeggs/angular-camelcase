@@ -20,6 +20,12 @@ module.exports = angular.module('filters.camelcase', []).filter('toCamelCase', f
     otherTokens = tokens.slice(1);
     return "" + (firstToken.toLowerCase()) + (otherTokens.map(capitalizeFirstLetter).join(''));
   };
+}).filter('titleFromCamelCase', function() {
+  return function(camelCase) {
+    return camelCase.replace(/([A-Z]+)/g, ' $1').replace(/^./, function(str) {
+      return str.toUpperCase();
+    }).trim();
+  };
 });
 
 },{}]},{},[1])

@@ -14,3 +14,17 @@ module.exports = angular.module 'filters.camelcase', []
     otherTokens = tokens[1..]
 
     "#{firstToken.toLowerCase()}#{otherTokens.map(capitalizeFirstLetter).join('')}"
+
+.filter 'titleFromCamelCase', ->
+  # Convert a camelCase string into a english title string, e.g. "Camel Case".
+  # Considers two sequential uppercase characters in the camelcase string to be the same token.
+
+  # http://stackoverflow.com/questions/4149276/javascript-camelcase-to-regular-form
+  (camelCase) ->
+    camelCase
+    # insert a space before all caps
+    .replace(/([A-Z]+)/g, ' $1')
+    # uppercase the first character
+    .replace(/^./, (str) -> str.toUpperCase())
+    # fix leading whitespace off-by-ones
+    .trim()

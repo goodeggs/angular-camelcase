@@ -28,7 +28,7 @@
   },
   "scripts": {
     "compile": "coffee --bare --compile --output lib/ src/",
-    "prepublish": "bower -sj install",
+    "prepublish": "bower -sj install && npm build",
     "pretest": "npm run build",
     "test": "./node_modules/karma/bin/karma start",
     "link": "browserify lib/index.js > angular-camelcase.js",

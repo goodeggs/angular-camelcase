@@ -1,6 +1,6 @@
 {
   "name": "angular-camelcase",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "filters for converting to/from camelcase",
   "author": "Good Eggs <open-source@goodeggs.com>",
   "contributors": [

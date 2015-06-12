@@ -2,6 +2,7 @@ capitalizeFirstLetter = (str) ->
   return '' if str.length is 0
   "#{str.substr(0, 1).toUpperCase()}#{str.substr(1)}"
 
+
 module.exports = angular.module 'filters.camelcase', []
 
 .filter 'toCamelCase', ->
@@ -28,3 +29,5 @@ module.exports = angular.module 'filters.camelcase', []
     .replace(/^./, (str) -> str.toUpperCase())
     # fix leading whitespace off-by-ones
     .trim()
+
+.filter 'capitalizeFirstLetter', -> capitalizeFirstLetter

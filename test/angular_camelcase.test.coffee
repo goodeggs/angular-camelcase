@@ -4,6 +4,7 @@ describe 'angular-camelcase', ->
     inject ($filter) ->
       @toCamelCase = $filter('toCamelCase')
       @titleFromCamelCase = $filter('titleFromCamelCase')
+      @capitalizeFirstLetter = $filter('capitalizeFirstLetter')
 
   describe 'toCamelCase filter', ->
     it 'converts an empty string', ->
@@ -36,3 +37,10 @@ describe 'angular-camelcase', ->
 
     it 'converts a camelcase string with consecutive capital letters', ->
       expect(@titleFromCamelCase 'wordWORD').to.equal 'Word WORD'
+
+  describe 'capitalizeFirstLetter filter', ->
+    it 'converts an empty string', ->
+      expect(@titleFromCamelCase '').to.equal ''
+
+    it 'capitalizes first letter', ->
+      expect(@capitalizeFirstLetter 'abc').to.equal 'Abc'
